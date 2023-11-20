@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import bg1 from '../src/bg1.jpg';
+import bg1 from '../src/blue.png';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -44,26 +44,30 @@ function Home() {
         className="w-full h-full object-cover"
       />
 
-      <div className="absolute inset-0 flex flex-col text-white px-[18rem]">
-        <div className="text-3xl font-bold mt-20 text-center">Survey</div>
+      <div className="absolute inset-0 flex flex-col text-white ">
+        <div><div className="text-6xl font-bold mt-20 text-center lg:text-center" >OWL BRAND</div></div>
+        <div className="text-3xl font-bold mt-20 text-center">Barn Owl Pellet Data Project</div>
 
         {displayName && (
           <div className="text-xl text-center mt-4">
             Hi, {displayName}!
           </div>
         )}
-
-        <div className="text-2xl mt-4 ml-5 mb-20">
-          Together, we are gathering information about the unique and fascinating diet of the common barn owl. In this survey, you'll have the chance to record your findings after dissecting a barn owl pellet, including prey species and their bone and exoskeleton discoveries.
+        <div className="text-2xl text-center lg:text-left mt-4 ml-7 mb-5 font-medium">
+          Welcome to Barn Owl Pellet Data Project!
         </div>
+        <div className="text-center ">
+          <div className="text-2xl text-center lg:text-left px-5 ml-7 font-normal mb-10">
+            Together, we are gathering information about the unique and fascinating diet of the common barn owl. In this survey, you'll have the chance to record your findings after dissecting a barn owl pellet, including prey species and their bone and exoskeleton discoveries.          </div>
 
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            onClick={handleStartSurveyClick}
-          >
-            Start Survey
-          </button>
+          <div className="mt-10">
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              onClick={handleStartSurveyClick}
+            >
+              Start Survey
+            </button>
+          </div>
         </div>
 
         <div className="absolute top-4 right-4 flex">
