@@ -4,11 +4,13 @@ import { getAuth } from 'firebase/auth';
 import { db } from '../src/Firebase/Firebase';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 
 const SurveyPage = () => {
   const auth = getAuth(); // Initialize Firebase Auth
   const user = auth.currentUser; // Get the current authenticated user
+  const navigate = useNavigate();
 
   const [selectedItems, setSelectedItems] = useState([]);
   const [currentStep, setCurrentStep] = useState(0);
@@ -113,7 +115,12 @@ const SurveyPage = () => {
       await addDoc(responseRef, userData);
 
       // Show a success toast message
-      toast.success('Survey submitted successfully!');
+      toast.success('Survey submitted successfully!', {
+        onClose: () => {
+          // Navigate to the home page after successful submission
+          navigate('/');
+        },
+      });
 
       // You can also reset the state after saving
       setResponses([]);
