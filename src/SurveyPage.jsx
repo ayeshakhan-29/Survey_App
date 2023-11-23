@@ -161,12 +161,12 @@ const SurveyPage = () => {
       <div className="absolute inset-0 flex flex-col items-center justify-start bg-black bg-opacity-70 text-white">
         <div className="text-3xl font-bold m-4 mt-10">Mind and Well-Being Assessment Survey</div>
 
-        <button
+        {/* <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-2 absolute top-4 left-4"
           onClick={handleBack}
         >
           Back
-        </button>
+        </button> */}
 
         <div className="bg-white bg-opacity-75 rounded-lg p-4 mt-6" style={{ width: '70vw', height: '15rem' }}>
           {questions.length > 0 && (
